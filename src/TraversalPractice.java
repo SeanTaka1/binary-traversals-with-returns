@@ -49,13 +49,14 @@ public class TraversalPractice {
      * 
      * @param node the root of the tree
      */
-    public static int printOddNodesPreOrder(TreeNode node) {
-        if (node == null) return 0;
+    public static void printOddNodesPreOrder(TreeNode node) {
+        if (node == null) return;
 
-        if (node.left == null && node.right == null) {
-            return node.data;
+        if (node.data % 2 != 0){
+            System.out.println(node.data);
         }
-        return sumLeafNodes(node.left) + sumLeafNodes(node.right);
+        printOddNodesPreOrder(node.left);
+        printOddNodesPreOrder(node.right);
     }
     
     /**
