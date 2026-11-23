@@ -49,7 +49,7 @@ public class TraversalPractice {
      * 
      * @param node the root of the tree
      */
-    public static void printOddNodesPreOrder(TreeNode node) {
+    public static int printOddNodesPreOrder(TreeNode node) {
         if (node == null) return 0;
 
         if (node.left == null && node.right == null) {
@@ -114,7 +114,9 @@ public class TraversalPractice {
      * @return the number of nodes in the tree
      */
     public static int size(TreeNode node) {
-        return -1;
+        if (node == null) return 0;
+
+        return 1 + size(node.left) + size(node.right);
     }
 
     /**
