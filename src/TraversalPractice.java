@@ -50,7 +50,12 @@ public class TraversalPractice {
      * @param node the root of the tree
      */
     public static void printOddNodesPreOrder(TreeNode node) {
+        if (node == null) return 0;
 
+        if (node.left == null && node.right == null) {
+            return node.data;
+        }
+        return sumLeafNodes(node.left) + sumLeafNodes(node.right);
     }
     
     /**
